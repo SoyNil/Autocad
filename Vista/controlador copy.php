@@ -12,12 +12,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
      $contenido = "";
 
      if ($lados == 3) {
-        // Crear el triángulo de la base en Z=0
+         // Crear el triángulo de la base en Z=0
     $contenido = "3dface\n";
     $contenido .= "0,0,0\n"; // Vértice 1 en la base
     $contenido .= "$ancho,0,0\n"; // Vértice 2 en la base
     $contenido .= "$ancho,$largo,0\n"; // Vértice 3 en la base
-    $contenido .= "0,0,0\n"; // Cerrar el triángulo de la base
     $contenido .= "\n"; // Línea en blanco para separar los comandos
     
     // Crear el triángulo de la parte superior en Z=$alto
@@ -25,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contenido .= "0,0,$alto\n"; // Vértice 1 en la parte superior
     $contenido .= "$ancho,0,$alto\n"; // Vértice 2 en la parte superior
     $contenido .= "$ancho,$largo,$alto\n"; // Vértice 3 en la parte superior
-    $contenido .= "0,0,$alto\n"; // Cerrar el triángulo de la parte superior
     $contenido .= "\n"; // Línea en blanco para separar los comandos
     
     // Conectar la base con la parte superior usando 3dface (caras laterales)
